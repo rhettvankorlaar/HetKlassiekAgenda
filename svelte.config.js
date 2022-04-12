@@ -9,6 +9,13 @@ const config = {
 
 	kit: {
 		adapter: adapter()
+	},
+	vite: {
+		resolve: {
+			alias: {
+
+			}
+		}
 	}
 };
 

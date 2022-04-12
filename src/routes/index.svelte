@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import { browser } from '$app/env';
+
+	import { goto } from '$app/navigation';
+	import Login from './Login.svelte';
+	if (browser) {
+		if (localStorage.getItem('token') !== null) {
+			goto('/jobs');
+		}
+	}
+</script>
+
+<Login />
