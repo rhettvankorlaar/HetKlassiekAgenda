@@ -4,11 +4,12 @@ import type { Month } from 'src/types/Month';
 import type { Status } from 'src/types/Status';
 import type { Client } from 'src/types/Client';
 import { goto } from '$app/navigation';
+import { browser } from '$app/env';
 
 export const months: Writable<Month[]> = writable([]);
 
 export const getMonths = async () => {
-	if (localStorage !== undefined) {
+	if (browser && localStorage !== null) {
 		const req = await fetch(
 			`https://backend.fleks.works/api/jobs/my-jobs/23ba0bc4-5c2e-4b3b-b90d-ad043ad656e9/${localStorage.getItem(
 				'uuid'
