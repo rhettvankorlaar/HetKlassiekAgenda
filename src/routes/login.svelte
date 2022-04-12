@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { userCredentials, getUserInfo } from '$lib/stores/UserInfoStore';
-	import type { LoginRequest } from 'src/types/LoginRequest';
+	import { getUserInfo } from '$lib/stores/UserInfoStore';
+	import type { LoginRequest } from '../types/LoginRequest';
 	import { goto } from '$app/navigation';
 
 	let loginRequest: LoginRequest = {
