@@ -3,7 +3,7 @@
 	import type { Job } from 'src/types/Job';
 	import ical, { ICalEvent, type ICalEventData } from 'ical-generator';
 	import moment from 'moment';
-	import { saveFile } from '$lib/file-download';
+	import { saveAs } from 'file-saver';
 	import type { Month } from 'src/types/Month';
 
 	let selectedJobs: Job[] = [];
@@ -38,7 +38,7 @@
 
 		//calendar.save('./calendar.ical');
 		const blob = calendar.toBlob();
-		saveFile(blob);
+		saveAs(blob, 'Het Klassiek - Events.ics');
 	};
 
 	const createCalendarAll = () => {
